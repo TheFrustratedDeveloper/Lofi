@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+html,body{
+  margin:0px;
+  padding:0px;
+  height: 100%;
+}
+#background{
+  background-color: #000;
+  background-image: url(../images/background2.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+#container *{
+  /* color:#FFF; */
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  line-height: 1em;
+  box-sizing: border-box;
+}
+#container{
+  width: 90%;
+  margin:0 auto;
+  position: relative;
+  max-width: 1024px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+   color:#A9A9A9;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:#A9A9A9;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:#A9A9A9;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:#A9A9A9;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:#A9A9A9;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:#A9A9A9;
+}
+#inputContainer{
+  width: 400px;
+  padding:45px;
+  float:left;
+  height: 100%;
+  border-right: 2px solid #999;
+}
+#inputContainer h2{
+  text-align: center;
+  color:whitesmoke;
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight:900;
+}
+#inputContainer label{
+  color:whitesmoke;
+  font-size: 13px;
+  display: block;
+  margin-top: 15px;
+}
+#inputContainer input[type="text"], input[type="email"], input[type="password"]{
+  display: block;
+  color:white;
+  background-color: transparent;
+  border:0;
+  margin-top: 5px;
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+  border-radius: 2px;
+}
+#inputContainer input[type="submit"]{
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 250px;
+  margin: 20px auto;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 45px;
+  width: 100%;
+}
+#inputContainer input[type="submit"]:hover{
+  cursor: pointer;
+  background-color: #58dc5e;
+}
+#inputContainer .errorMessage{
+  font-size: 16px;
+  color: #58dc5e;
+  margin: 0 auto;
+  display: block;
+}
+.hasAccountText{
+  text-align: center;
+}
+.hasAccountText span{
+  font-weight: lighter;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+}
+#regForm, #loginForm{
+  display:none;
+}
+
+.inputText{
+  padding-left: 30px;
+  display: table-cell;
+}
+.inputText h1{
+  font-size: 4em;
+  font-weight: bold;
+  color:#58dc5e;
+}
+.inputText h2,ul{
+  margin:35px 0;
+  color:#fff;
+}
+.inputText ul,li{
+  padding: 0;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.inputText img{
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+}
