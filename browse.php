@@ -1,11 +1,10 @@
 <?php include ("includes/includedFile.php"); ?>
 
-
 <!-- Main Container -->
   <h1 class="pageHeadingBig">Your might also like</h1>
-  <div class="gridViewContainer">
+  <div class="gridViewContainer" style="margin-left:8%;">
     <?php
-      $albumQuery = mysqli_query($connect,"SELECT * FROM album ORDER BY RAND() LIMIT 10");
+      $albumQuery = mysqli_query($connect,"SELECT * FROM album ORDER BY RAND() LIMIT 12");
       while($row = mysqli_fetch_assoc($albumQuery)){
         echo "
           <div class='gridViewItem'>

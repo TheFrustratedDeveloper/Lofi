@@ -1,7 +1,7 @@
 <div id="navbarContainer">
   <nav class="navBar">
     <span onclick="openPagePushState('index.php')" role="link" tabindex="0" class="logo">
-      <img src="assets/images/logo.png" alt="lofi-logo">
+      <img src="assets/images/Layer.png" alt="lofi-logo">
     </span>
   </nav>
   <div class="group">

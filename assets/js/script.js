@@ -35,7 +35,7 @@ $(document).on("change","select.playlist",function(){
   });
 });
 
-// ______________________________________________
+//______________________________________________
 
 window.addEventListener("popstate", function() {
   var url = location.href;
@@ -59,7 +59,7 @@ function openPagePushState(url) {
   history.pushState(null, null, url);
 }
 
-// ______________________________________________
+//______________________________________________
 
 function createPlaylist(){
   var popUp = prompt("Please enter the name for your playlist");
@@ -120,7 +120,6 @@ function updateTimeProgressBar(audio){
 }
 
 function updateVolumeProgressBar(audio){
-
   var volume = audio.volume * 100 ;
   $('.volumeBar .progress').css("width",volume + "%");
 }
@@ -173,7 +172,6 @@ function logout(){
 }
 
 //AUDIO CLASS 
-
 function Audio(){
   //creating Audio class in javascript
   this.currentlyPlaying;

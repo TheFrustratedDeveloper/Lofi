@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2018 at 04:06 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: Feb 13, 2018 at 07:07 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,7 +42,17 @@ CREATE TABLE `album` (
 
 INSERT INTO `album` (`id`, `title`, `artist`, `genre`, `artworkPath`) VALUES
 (1, 'Reputation', 1, 2, 'assets/images/artwork/reputation.jpg'),
-(2, 'Take My Breath Away', 4, 5, 'assets/images/artwork/takeMyBreathAway.jpg');
+(2, 'Take My Breath Away', 4, 5, 'assets/images/artwork/takeMyBreathAway.jpg'),
+(3, 'All Falls Down', 6, 7, 'assets/images/artwork/allFallsDown.jpg'),
+(4, 'Despacito ', 8, 8, 'assets/images/artwork/despacito.png'),
+(5, 'Dirty Sexy Money', 9, 7, 'assets/images/artwork/dirtySexyMoney.jpg'),
+(6, 'Divide', 10, 2, 'assets/images/artwork/divide.jpg'),
+(7, 'Evolve', 11, 2, 'assets/images/artwork/evolve.jpg'),
+(8, 'Fifty Shades Freed', 12, 2, 'assets/images/artwork/fiftyShadeFreed.jpg'),
+(9, 'Finesse [Remix]', 14, 3, 'assets/images/artwork/finesse.png'),
+(10, 'Thank You', 15, 2, 'assets/images/artwork/thankyou.jpg'),
+(11, 'The Beautiful and Dammed', 16, 4, 'assets/images/artwork/theBeautifulAndDammed.jpg'),
+(12, 'Understand Me', 17, 2, 'assets/images/artwork/understandMe.jpg');
 
 -- --------------------------------------------------------
 
@@ -61,9 +71,20 @@ CREATE TABLE `artist` (
 
 INSERT INTO `artist` (`id`, `name`) VALUES
 (1, 'Taylor Swift'),
-(2, 'Miley Cyrus'),
-(3, 'Shakira'),
-(4, 'Alesso');
+(4, 'Alesso'),
+(5, 'Noah Cyrus'),
+(6, 'Alan Walker'),
+(7, 'Justin Beiber'),
+(8, 'Luis Fonsi'),
+(9, 'David Guetta'),
+(10, 'Ed Sheeran'),
+(11, 'Imagine Dragons'),
+(12, 'Dua Lipa'),
+(13, 'Cardi B'),
+(14, 'Bruno Mars'),
+(15, 'Meghan Trainor'),
+(16, 'G-Eazy'),
+(17, 'Conor Maynard');
 
 -- --------------------------------------------------------
 
@@ -87,7 +108,9 @@ INSERT INTO `genre` (`id`, `name`) VALUES
 (4, 'RAP'),
 (5, 'EDM'),
 (6, 'Classical'),
-(7, 'ElectroPop');
+(7, 'ElectroPop'),
+(8, 'Latin Pop'),
+(9, 'R&B soul');
 
 -- --------------------------------------------------------
 
@@ -107,7 +130,7 @@ CREATE TABLE `playlists` (
 --
 
 INSERT INTO `playlists` (`id`, `name`, `owner`, `dateCreated`) VALUES
-(4, 'Dec 2017', 'dhruv', '2017-12-31 00:00:00');
+(5, 'Demo', 'root', '2018-02-13 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -127,7 +150,7 @@ CREATE TABLE `playlistsongs` (
 --
 
 INSERT INTO `playlistsongs` (`id`, `songId`, `playlistId`, `playlistOrder`) VALUES
-(6, 2, 4, 1);
+(7, 6, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -152,9 +175,25 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`id`, `title`, `artist`, `album`, `genre`, `duration`, `path`, `albumOrder`, `plays`) VALUES
-(1, 'Take my breath away', 4, 2, 2, '03.08', 'assets/music/takeMyBreathAway/Alesso%20-%20Take%20My%20Breath%20Away.flac', 1, 69),
-(2, 'Ready For It', 1, 1, 7, '03.28', 'assets/music/reputation/01.%20...Ready%20For%20It.flac', 1, 74),
-(3, 'End Game', 1, 1, 7, '04.04', 'assets/music/reputation/02.%20End%20Game%20(feat.%20Ed%20Sheeran%20&%20Future).flac', 2, 73);
+(1, 'Take my breath away', 4, 2, 2, '03.08', 'assets/music/takeMyBreathAway/takeMyBreathAway.mp3', 1, 72),
+(2, 'Ready For It', 1, 1, 7, '03.28', 'assets/music/reputation/readyForIt.mp3', 1, 79),
+(3, 'End Game', 1, 1, 7, '04.04', 'assets/music/reputation/endGame.mp3', 2, 77),
+(4, 'Dancing with our hands tied', 1, 1, 2, '03.31', 'assets/music/reputation/dancingWithOurHandsTied.mp3', 11, 2),
+(5, 'Look what you made me do', 1, 1, 2, '03.31', 'assets/music/reputation/lookWhatYouMadeMeDo.mp3', 6, 1),
+(6, 'This is why we cant have nice things', 1, 1, 2, '03.27', 'assets/music/reputation/thisIsWhyWeCantHaveNiceThings.mp3', 5, 3),
+(7, 'All Falls Down', 6, 3, 7, '03.19', 'assets/music/allFallsDown/allFallsDown.mp3', 1, 3),
+(8, 'Despacito', 8, 4, 8, '03.47', 'assets/music/despacito/despacito.mp3', 1, 5),
+(9, 'Dirty Sexy Money ft Afrojack', 9, 5, 7, '02.52', 'assets/music/dirtySexyMoney/dirtySexyMoneyftCharli.mp3', 1, 3),
+(10, 'Perfect', 10, 6, 2, '04.23', 'assets/music/divide_deluxe/perfect.mp3', 5, 2),
+(11, 'Shape of you', 10, 6, 2, '03.53', 'assets/music/divide_deluxe/shapeOfYou.mp3', 1, 2),
+(12, 'Believer', 11, 7, 2, '03.23', 'assets/music/evolve/believer.mp3', 1, 1),
+(13, 'Thunder', 11, 7, 2, '03.07', 'assets/music/evolve/thunder.mp3', 2, 2),
+(14, 'High (& ft. Dua Lipa)', 12, 8, 2, '03.16', 'assets/music/fiftyShadesFreed/high&duaLipa.mp3', 1, 3),
+(15, 'Finesse(Remix) ft CardiB', 14, 9, 3, '03.37', 'assets/music/finesse(remix)cardiB/finesse_remix.mp3', 1, 4),
+(16, 'No', 15, 10, 2, '03.40', 'assets/music/thankyou/no.mp3', 2, 1),
+(17, 'Me Too', 15, 10, 2, '03.01', 'assets/music/thankyou/meToo.mp3', 1, 2),
+(18, 'Him & I', 16, 11, 4, '04.28', 'assets/music/theBeautifulAndDamned/himAndI.mp3', 1, 4),
+(19, 'Understand Me', 17, 12, 2, '03.37', 'assets/music/understandMe/understandMe.mp3', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -178,9 +217,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `firstName`, `lastName`, `email`, `password`, `signUpDate`, `profilePic`) VALUES
-(1, 'dhruv', 'Dhruv', 'Saxena', 'tfd@dhruv.me', '202cb962ac59075b964b07152d234b70', '2017-12-21 00:00:00', 'assets/images/profile/boy.png'),
-(4, 'dskSaxena', 'Dhruv', 'Saxena', 'dhruvsaaaxena.1998@gmail.com', '4fcc27e2f9f531a4050c2d21e9f05149', '2017-12-21 00:00:00', 'assets/images/profile/boy.png'),
-(5, 'aaaaaaaa', 'Aayush', 'Mathur', 'someo@ee.com', 'd148b397af8e9842e2b746ed49e4128d', '2018-01-06 00:00:00', 'assets/images/profile/boy.png');
+(6, 'root', 'Default', 'User', 'someone@example.com', '95f44e0321ed96ba9d2961a54daab05e', '2018-02-13 00:00:00', 'assets/images/profile/boy.png');
 
 --
 -- Indexes for dumped tables
@@ -238,43 +275,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `artist`
 --
 ALTER TABLE `artist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `playlistsongs`
 --
 ALTER TABLE `playlistsongs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
